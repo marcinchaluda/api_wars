@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>API Wars || wolczi</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Contrail+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <script type="module" src="../static/js/container_generator.js" defer></script>
+    <script type="module" src="../static/js/service.js" defer></script>
+    <script type="module" src="../static/js/main.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1>Star Wars universe planets</h1>
+        <section class="buttons-area">
+            <a class="previous" href="#" type="button">< Previous</a><span> |</span>
+            <a class="next" href="#" type="button">Next ></a>
+        </section>
+        <div class="space">
+
+        </div>
+        <section class="registration">
+            {% if session['username'] %}
+                <span class="logged">Logged in as a {{ session['username'] }}</span><span>|</span>
+                <a class="login" href="{{ url_for('logout') }}" type="button">Logout</a>
+            {% else %}
+                <a class="login" href="{{ url_for('login') }}" type="button">Log in</a><span> | </span>
+                <a class="register" href="{{ url_for('register') }}" type="button">Register</a>
+            {% endif %}
+        </section>
+    </header>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in  messages %}
+                <div class="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <section class="planet-table">
+    </section>
+    {% include 'modal_residents.html' %}
+</div>
+</body>
+</html>

@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightgrey;
+    opacity: 0.9;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../static/img/sky.jpg');
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    font-family: 'Muli', Helvetica, Arial, sans-serif;
+}
+
+header {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0.5em auto;
+    padding: 1.5em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+}
+
+header h1 {
+    padding-left: 2em;
+    color: gold;
+}
+
+header a, .btn {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.2em;
+}
+
+header a:hover {
+    color: gold;
+}
+
+.buttons-area {
+    padding: 0 2em 0 2em;
+}
+
+.buttons-area span, .registration span {
+    padding: 0 0.5em 0 0.5em;
+}
+
+.planet-table {
+    display: flex;
+    margin-top: 0.6em;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    height: 85vh;
+}
+
+.planet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 0 1em 0;
+    width: 15vw;
+    height: 39vh;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5%;
+    text-align: center;
+}
+
+.planet p:first-child, legend {
+    width: 100%;
+    padding: 0.3em 0 0.3em 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: gold;
+    font-size: 1.5em;
+}
+
+.planet p:first-child i {
+    color: gold;
+}
+
+.planet-value {
+    width: 70%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.description {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+i {
+    padding: 0.3em 0.6em 0 0;
+    color: rgba(255,215,0, 0.5);
+}
+
+form i {
+    color: gold;
+}
+
+.resVal i {
+    color: black;
+}
+
+.planet p {
+    /*padding: 0.1em 0.5em 0 0;*/
+}
+
+h2 {
+    color: red;
+    text-transform: uppercase;
+}
+
+.residents, #submit {
+    width: 60%;
+    margin: 0.3em 0;
+    padding: 0.3em;
+    font-size: 1em;
+    color: black;
+    text-decoration: none;
+    background-color: gold;
+    border-radius: 10px;
+}
+
+.residents:hover {
+    background-color: lightgrey;
+}
+
+.residents i {
+    padding: 0 0.3em 0 0.3em;
+    color: black;
+}
+
+.disable {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.modal-container {
+    background-color: whitesmoke;
+    display: flex;
+    margin: 3vw auto;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 60%;
+    min-height: 30%;
+    border-radius: 20px;
+}
+/* Modal Content/Box */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Could be more or less, depending on screen size */
+    color: black;
+
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 0.5em 0;
+    border-bottom: 1px solid grey;
+    width: 100%;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    border-top: 1px solid grey;
+}
+
+.modal-footer a {
+    cursor: pointer;
+    color: white;
+    width: 4em;
+    background-color: black;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 1.2em;
+}
+
+.modal-footer a:hover {
+    background-color: darkgoldenrod;
+}
+
+.modal-header h2 {
+    color: black;
+}
+
+/* The Close Button */
+.close {
+    align-self: flex-end;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-close {
+    text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: darkgoldenrod;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.resCell {
+    display: flex;
+    justify-content: space-around;
+    margin: 0.4em 1em;
+    padding: 0.7em;
+    border: 1px solid grey;
+    background-color: lightgoldenrodyellow;
+}
+
+.pair {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.resVal {
+    border-bottom: 1px solid grey;
+    padding: 0 0.5em 0.2em 0.5em;
+}
+
+.desc {
+    font-size: 0.6em;
+    padding-top: 0.4em;
+}
+
+.alert {
+    width: 100%;
+    font-size: 1.5em;
+    color: black;
+    background-color: lightgreen;
+    padding: 0.3em;
+    text-align: center;
+}
+
+.registration {
+    padding-right: 4em;
+    align-items: flex-end;
+}
+
+.space {
+    flex-grow: 1;
+}
+
+.content-section {
+    width: 25%;
+    margin: 20vh 0 0 0;
+    border: 1px solid grey;
+    border-radius: 20px;
+    text-align: center;
+}
+
+small a {
+    color: gold;
+}
+
+.account {
+     margin: 0.6em 0 0 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0.6em 0;
+    margin-right: 1em;
+    align-items: center;
+}
+
+.form-group label {
+    margin: 0 1em 0 2em;
+    flex-grow: 1;
+}
+
+.form-group input {
+    margin-right: 3em;
+}
+
+.invalid-feedback {
+    text-align: center;
+    padding: 0.5em 0.3em;
+    background-color: lightgreen;
+    color: black;
+    flex-grow: 1;
+    margin: 0.5em 0 0 1em;
+}
+
+.submit-group {
+    padding: 1em;
+    text-align: center;
+}
+
+legend + div {
+    margin-top: 1em;
+}
+
+.logged {
+    text-transform: capitalize;
+}
